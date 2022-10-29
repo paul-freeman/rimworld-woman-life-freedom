@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <!-- Add new thoughts for Women Life Freedom -->
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/PreceptDef[defName="ApparelDesired_Strong_Subordinate"]/comps/li[2]</xpath>
+    <value>
+        <li Class="PreceptComp_SituationalThought">
+          <thought>WearingForcedHeadCovering_Strong</thought>
+          <description>Wearing undesired apparel</description>
+        </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationInsert">
+    <xpath>Defs/PreceptDef[defName="ApparelDesired_Soft_Subordinate"]/comps/li[2]</xpath>
+    <value>
+        <li Class="PreceptComp_SituationalThought">
+          <thought>WearingForcedHeadCovering_Soft</thought>
+          <description>Wearing undesired apparel</description>
+        </li>
+    </value>
+  </Operation>
+
+  <!-- Replace desire to conform to ideology -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName="WearingDesiredApparel_Soft"]/thoughtClass</xpath>
+    <value>
+      <thoughtClass>Thought_Situational_WearingDesiredApparel_WLF</thoughtClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThoughtDef[defName="WearingDesiredApparel_Strong"]/thoughtClass</xpath>
+    <value>
+      <thoughtClass>Thought_Situational_WearingDesiredApparel_WLF</thoughtClass>
+    </value>
+  </Operation>
+
+  <!-- Replace female thought with one the does not care about hair coverage -->
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PreceptDef[defName="Nudity_Female_UncoveredGroinChestOrHairDisapproved"]/comps/li[1]</xpath>
+    <value>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinOrChestUncovered_Disapproved_Female</thought>
+      </li>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/PreceptDef[defName="Nudity_Female_UncoveredGroinChestHairOrFaceDisapproved"]/comps/li[1]</xpath>
+    <value>
+      <li Class="PreceptComp_SituationalThought">
+        <thought>GroinOrChestUncovered_Disapproved_Female</thought>
+      </li>
+    </value>
+  </Operation>
+
+  <!-- Replace female thought worker with one that does not care about hair coverage -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="GroinChestOrHairUncovered_Disapproved_Female"]</xpath>
+    <value>
+      <workerClass>ThoughtWorker_Precept_GroinOrChestUncovered</workerClass>
+    </value>
+  </Operation>
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThoughtDef[defName="GroinChestHairOrFaceUncovered_Disapproved_Female"]</xpath>
+    <value>
+      <workerClass>ThoughtWorker_Precept_GroinOrChestUncovered</workerClass>
+    </value>
+  </Operation>
+</Patch>
