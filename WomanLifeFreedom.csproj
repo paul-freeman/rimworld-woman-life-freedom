@@ -4,9 +4,9 @@
 
   <PropertyGroup>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <AssemblyName>WomenLifeFreedom</AssemblyName>
+    <AssemblyName>WomanLifeFreedom</AssemblyName>
     <OutputType>Library</OutputType>
-    <OutputPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WomenLifeFreedom\</OutputPath>
+    <OutputPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WomanLifeFreedom\</OutputPath>
     <FileAlignment>512</FileAlignment>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
@@ -16,7 +16,7 @@
     <Compile Include="Thought_Situational_WearingDesiredApparel_WLF.cs" />
     <Compile Include="Thought_Situational_WearingForcedHeadCovering.cs" />
     <Compile Include="ThoughtWorker_Precept_WearingForcedHeadCovering.cs" />
-    <Compile Include="WomenLifeFreedom.cs" />
+    <Compile Include="WomanLifeFreedom.cs" />
     <Folder Include="About\" />
     <Folder Include="Assemblies\" />
     <Folder Include="Defs\" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-  <!-- Add new thoughts for Women Life Freedom -->
+  <!-- Add new thoughts for Woman Life Freedom -->
   <Operation Class="PatchOperationInsert">
     <xpath>Defs/PreceptDef[defName="ApparelDesired_Strong_Subordinate"]/comps/li[2]</xpath>
     <value>
