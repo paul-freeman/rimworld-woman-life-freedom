@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AssemblyName>WomenLifeFreedom</AssemblyName>
+    <OutputType>Library</OutputType>
+    <OutputPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\WomenLifeFreedom\</OutputPath>
+    <FileAlignment>512</FileAlignment>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Thought_Situational_WearingDesiredApparel_WLF.cs" />
+    <Compile Include="Thought_Situational_WearingForcedHeadCovering.cs" />
+    <Compile Include="ThoughtWorker_Precept_WearingForcedHeadCovering.cs" />
+    <Compile Include="WomenLifeFreedom.cs" />
+    <Folder Include="About\" />
+    <Folder Include="Assemblies\" />
+    <Folder Include="Defs\" />
+    <Folder Include="Patches\" />
+  </ItemGroup>
+
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup Condition=" '$(Configuration)' == 'Stable' ">
+    <PostBuildEvent>
+md "$(ProjectDir)\Assemblies"
+move /y "$(TargetDir)$(TargetFileName)" "$(ProjectDir)Assemblies\$(TargetFileName)"
+rd /s /q "$(TargetDir)"
+md "$(TargetDir)"
+md "$(TargetDir)About"
+md "$(TargetDir)Assemblies"
+md "$(TargetDir)Defs"
+md "$(TargetDir)Patches"
+xcopy /y /s "$(ProjectDir)About" "$(TargetDir)About"
+xcopy /y /s "$(ProjectDir)Assemblies" "$(TargetDir)Assemblies"
+xcopy /y /s "$(ProjectDir)Defs" "$(TargetDir)Defs"
+xcopy /y /s "$(ProjectDir)Patches" "$(TargetDir)Patches"
+    </PostBuildEvent>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\RimWorld\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

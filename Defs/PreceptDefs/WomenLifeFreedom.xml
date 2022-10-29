@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThoughtDef>
+    <defName>WearingForcedHeadCovering_Soft</defName>
+    <workerClass>ThoughtWorker_Precept_WearingForcedHeadCovering</workerClass>
+    <thoughtClass>Thought_Situational_WearingForcedHeadCovering</thoughtClass>
+    <stages>
+      <li>
+        <label>wearing {APPAREL}</label>
+        <description>I hate wearing {APPAREL}. It goes against my personal beliefs. #MahsaAmini</description>
+        <baseMoodEffect>-20</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <ThoughtDef>
+    <defName>WearingForcedHeadCovering_Strong</defName>
+    <workerClass>ThoughtWorker_Precept_WearingForcedHeadCovering</workerClass>
+    <thoughtClass>Thought_Situational_WearingForcedHeadCovering</thoughtClass>
+    <stages>
+      <li>
+        <label>wearing {APPAREL}</label>
+        <description>I despise wearing {APPAREL}. It goes against my personal beliefs. #MahsaAmini</description>
+        <baseMoodEffect>-40</baseMoodEffect>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>
